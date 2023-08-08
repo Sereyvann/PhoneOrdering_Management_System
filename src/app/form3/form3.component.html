@@ -1,0 +1,163 @@
+<!-- phone-ordering.component.html -->
+<div class="phone-ordering-form">
+  <h2 class="phone-ordering-heading"><b>PHONE ORDERING</b></h2>
+  <div class="container">
+    <h3 class="text-left">Phone Detail</h3>
+
+    <form #orderForm="ngForm" (ngSubmit)="AddOrder(orderForm)" class="form">
+      <div class="form-element">
+        <h5>Province</h5>
+        <div required class="input-group">
+          <select
+            matInput
+            #orderprovince="ngModel"
+            class="form-select"
+            name="province"
+            [(ngModel)]="order.province"
+            id="inputGroupSelect04"
+            aria-label="Example select with button addon"
+          >
+            <option *ngFor="let province of provinces">{{ province }}</option>
+          </select>
+          <div
+            *ngIf="orderprovince.dirty && orderprovince.errors?.['required']"
+            class="text-danger"
+          >
+            Please choose a province!
+          </div>
+        </div>
+      </div>
+
+      <div class="form-element">
+        <h5>Region</h5>
+        <input
+          #orderregion="ngModel"
+          required
+          name="region"
+          [(ngModel)]="order.region"
+          type="text"
+          class="form-control"
+          placeholder="Please Enter the region"
+        />
+        <div
+          *ngIf="orderregion.dirty && orderregion.errors?.['required']"
+          class="text-danger"
+        >
+          Please provide Region!
+        </div>
+      </div>
+      <br />
+
+      <div class="form-element">
+        <h5>Store name</h5>
+        <input
+          #orderstorename="ngModel"
+          required
+          name="storeName"
+          [(ngModel)]="order.storeName"
+          type="text"
+          class="form-control"
+          placeholder="Please Enter the store name"
+        />
+        <div
+          *ngIf="orderstorename.dirty && orderstorename.errors?.['required']"
+          class="text-danger"
+        >
+          Please provide Store Name!
+        </div>
+      </div>
+      <br />
+
+      <div class="form-element">
+        <h5>Date</h5>
+        <div class="input-group mb-3">
+          <input
+            matInput
+            required
+            name="date"
+            [(ngModel)]="order.date"
+            type="datetime"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="form-element">
+        <h5>Model</h5>
+        <div class="input-group mb-3">
+          <input
+            #ordermodel="ngModel"
+            required
+            name="pModel"
+            [(ngModel)]="order.pModel"
+            type="text"
+            value="Newest Model"
+            class="form-control"
+            placeholder="Please Enter the Model name"
+          />
+          <div
+            *ngIf="ordermodel.dirty && ordermodel.errors?.['required']"
+            class="text-danger"
+          >
+            Please provide Model name!
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="form-element">
+        <h5>Amount</h5>
+        <div class="input-group mb-3">
+          <input
+            #orderamount="ngModel"
+            required
+            name="amountM"
+            [(ngModel)]="order.amountM"
+            type="number"
+            class="form-control"
+          />
+          <br />
+          <div
+            *ngIf="orderamount.dirty && (orderamount.errors?.['required'] || orderamount.value == 0)"
+            class="text-danger"
+          >
+            Please provide a valid amount!
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="form-element">
+        <h5>Color</h5>
+        <div class="form-check" *ngFor="let color of colors">
+          <mat-checkbox matInput id="value" #checkbox class="example-margin">{{
+            color
+          }}</mat-checkbox>
+          <br />
+          <mat-form-field *ngIf="checkbox.checked">
+            <div class="input-group mb-3">
+              <input
+                matInput
+                type="text"
+                (change)="addColor($event, color)"
+                id="amount"
+                placeholder="Amount per color"
+                class="form-control"
+              />
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary ml-auto">
+        <span>Done</span> <i class="fas fa-arrow-right"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>

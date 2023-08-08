@@ -1,0 +1,9 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <span class="brand-logo">VIVO</span>
+  </div>
+  <a *ngIf="!isLoggedIn()" routerLink="/login">LOG IN</a>
+  <a *ngIf="isLoggedIn()" (click)="logout()">LOG OUT</a>
+</nav>
+
+<router-outlet></router-outlet>

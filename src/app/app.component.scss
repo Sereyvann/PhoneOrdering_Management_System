@@ -1,0 +1,46 @@
+@import "~/node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0072b8; /* Dark blue background color */
+  color: #fff; /* White text color */
+}
+a {
+  color: #fff; /* White text color */
+  text-decoration: none; /* Remove underline */
+}
+.brand-logo {
+  font-weight: bold;
+  color: #fff;
+}
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+.profile-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.line {
+  width: 2px;
+  height: 20px;
+  background-color: #fff; /* White line color */
+  margin-right: 10px;
+}

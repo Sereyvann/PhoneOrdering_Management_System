@@ -1,0 +1,47 @@
+/* phone-ordering.component.scss */
+.phone-ordering-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #a0cce7;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.phone-ordering-heading {
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 50px;
+}
+
+.container {
+  min-width: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #a0cce7;
+}
+
+h3 {
+  margin-bottom: 30px;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-element {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #0072b8;
+  float: right;
+}
+
+.btn-primary span {
+  margin-right: 10px;
+}
