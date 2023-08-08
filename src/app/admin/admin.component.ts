@@ -47,15 +47,12 @@ export class AdminComponent implements OnInit {
       console.log(order);
       this.totalOrders = order.length;
     });
-
-    // this.orders = this.orderService.getOrders()
   }
 
   constructor(@SkipSelf() private orderService: OrderService) {}
 
   addOrder() {
     const order1: OrderList = {
-      // id = "",
       province: Province.KAMPONGCHAM,
       region: 'K-1',
       storeName: 'Broom',
@@ -71,8 +68,6 @@ export class AdminComponent implements OnInit {
       console.log(data);
       this.orders.push(data);
     });
-
-    // this.orders = [... this.orders, order1]
   }
 
   deleteOrder() {
@@ -89,15 +84,12 @@ export class AdminComponent implements OnInit {
   }
 
   exportexcel(): void {
-    /* pass here the table id */
     let element = document.getElementById('excel-table');
     const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
-    /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
-    /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
 }

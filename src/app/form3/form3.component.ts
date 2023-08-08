@@ -27,8 +27,7 @@ export class Form3Component implements OnInit {
 
   value: string = '';
   amount: number = 0;
-  // value = document.getElementById('value')?.innerHTML
-  // amount = document.getElementById('amount')?.innerHTML
+
   color: Array<{
     value: string;
     amount: number;
@@ -47,7 +46,6 @@ export class Form3Component implements OnInit {
   }
 
   order: any = {
-    // _id?: string
     province: '',
     region: '',
     storeName: '',
@@ -58,17 +56,7 @@ export class Form3Component implements OnInit {
   };
 
   constructor(private orderService: OrderService) {}
-  ngOnInit(): void {
-    
-  }
-
-  // ngOnInit(): void {
-  //   // if(this.value != '' && this.amount != 0) {
-  //   // this.color = document.getElementById('value')?.innerHTML
-  //   // this.amount = document.getElementById('amount')?.innerHTML
-  //   // console.log(this.value + '+' + this.amount)
-  //   // }
-  // }
+  ngOnInit(): void {}
 
   show() {
     this.hideForm = !this.hideForm;

@@ -7,7 +7,6 @@ import { Form3Component } from './form3/form3.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,15 +22,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
     Form3Component,
     AdminComponent,
     LoginComponent,
-    NavigationComponent,
-    TestComponent
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,16 +48,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [
     {
       provide: APP_SERVICE_CONFIG,
-      useValue: APP_CONFIG
+      useValue: APP_CONFIG,
     },
-    
-
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,11 +1,8 @@
-<!-- <app-navigation></app-navigation> -->
 <div class="body-page">
   <div class="container">
     <h2><b>PHONE ORDERING</b></h2>
     <h3>Phone Detail</h3>
-    <div *ngIf="selectedOrder">
-      <!-- {{selectedOrder | json}} -->
-    </div>
+    <div *ngIf="selectedOrder"></div>
 
     <table class="content-table" id="excel-table">
       <thead>
@@ -53,13 +50,5 @@
       Export
     </button>
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
-
-    <!-- <button type="button" (click)="addOrder()" class="btn btn-primary">
-      Add Order
-    </button> -->
   </div>
 </div>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-/>
