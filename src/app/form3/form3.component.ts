@@ -3,6 +3,7 @@ import { OrderList, Province } from '../mockup';
 import { OrderService } from '../admin/service/order.service';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form3',
@@ -55,7 +56,7 @@ export class Form3Component implements OnInit {
     color: [],
   };
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService, private router: Router) {}
   ngOnInit(): void {}
 
   show() {
@@ -77,6 +78,8 @@ export class Form3Component implements OnInit {
           amountM: 0,
           color: [],
         });
+
+        this.router.navigate(['/thank-you']);
       },
       (err: HttpErrorResponse) => {
         if (err) {

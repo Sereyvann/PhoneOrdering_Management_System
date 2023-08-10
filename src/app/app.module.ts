@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AdminComponent,
     LoginComponent,
     TestComponent,
+    ThankYouComponent,
   ],
   imports: [
     BrowserModule,
